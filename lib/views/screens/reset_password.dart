@@ -101,7 +101,7 @@ class ResetPasswordPage extends StatelessWidget {
                             _confirmPassTeController.text.trim()) {
                           CustomToast().showToast(
                             context: context,
-                            message: 'Passwords do not match !!',
+                            message: 'Pasasdfsdfsdwords do not match !!',
                             isError: true,
                           );
                           return;
