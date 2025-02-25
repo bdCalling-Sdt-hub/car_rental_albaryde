@@ -7,9 +7,9 @@ import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/components/custom_toast.dart';
 import 'package:untitled/views/base/widgets/textUnderlne.dart';
 
-import '../base/components/custom_text_field.dart';
-import '../base/widgets/app_custom_modal.dart';
-import '../base/widgets/app_custom_textfield.dart';
+import '../../../base/components/custom_text_field.dart';
+import '../../../base/widgets/app_custom_modal.dart';
+import '../../../base/widgets/app_custom_textfield.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});

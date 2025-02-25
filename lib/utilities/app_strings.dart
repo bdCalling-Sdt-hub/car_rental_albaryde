@@ -58,4 +58,15 @@ class AppString {
 
   //============================Validator  String=======================================>
   static const String pleaseEnterYour = 'Please Enter Your';
+
+  //============================Settings Landing Page=======================================>
+  static const String setting = 'Setting';
+  static const String changePassword = 'Change Password';
+  static const String privacyPolicy = 'Privacy Policy';
+  static const String termsAndConditions = 'Terms & Conditions';
+  static const String aboutUs = 'About Us';
+  static const String support = 'Support';
+  //============================Settings Landing Page=======================================>
+  static const String newPassword = 'New Password';
+  static const String oldPassword = 'Old Password';
 }

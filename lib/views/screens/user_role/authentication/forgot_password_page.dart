@@ -6,11 +6,11 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/utilities/app_colors.dart';
 import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/widgets/textUnderlne.dart';
-import 'package:untitled/views/screens/sign_up_page.dart';
-import 'package:untitled/views/screens/verify_mail.dart';
+import 'package:untitled/views/screens/user_role/authentication/sign_up_page.dart';
+import 'package:untitled/views/screens/user_role/authentication/verify_mail.dart';
 
-import '../base/components/custom_text_field.dart';
-import '../base/widgets/app_custom_textfield.dart';
+import '../../../base/components/custom_text_field.dart';
+import '../../../base/widgets/app_custom_textfield.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});

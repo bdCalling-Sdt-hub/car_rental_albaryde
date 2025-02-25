@@ -7,7 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/custom_pin_code_field.dart';
 import 'package:untitled/views/base/widgets/textUnderlne.dart';
-import 'package:untitled/views/screens/reset_password.dart';
+import 'package:untitled/views/screens/user_role/authentication/reset_password.dart';
 
 class VerifyMailScreen extends StatefulWidget {
   const VerifyMailScreen({super.key});

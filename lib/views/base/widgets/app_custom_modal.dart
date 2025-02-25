@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/utilities/app_colors.dart';
 
 import '../../../utilities/app_strings.dart';
-import '../../screens/sign_in_page.dart';
+import '../../screens/user_role/authentication/sign_in_page.dart';
 
 class AppCustomModal extends StatelessWidget {
   const AppCustomModal({

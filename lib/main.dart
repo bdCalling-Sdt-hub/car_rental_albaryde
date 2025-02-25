@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled/utilities/app_theme.dart';
-import 'package:untitled/views/screens/forgot_password_page.dart';
-import 'package:untitled/views/screens/reset_password.dart';
-import 'package:untitled/views/screens/sign_in_page.dart';
-import 'package:untitled/views/screens/sign_up_page.dart';
-import 'package:untitled/views/screens/verify_mail.dart';
+import 'package:untitled/views/screens/user_role/setting/setting_landing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +19,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return GetMaterialApp(
-          home: SignInPage( ),
+          home: SettingsLandingPage(),
           theme: AppTheme.defaultThemeData,
           initialBinding: ControllerBinder(),
           debugShowCheckedModeBanner: false,
