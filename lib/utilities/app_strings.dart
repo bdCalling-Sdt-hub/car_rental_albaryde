@@ -35,14 +35,27 @@ class AppString {
       'Please Enter Your Email Address to Reset Password';
   static const String sendOTP = 'Send Otp';
 
+  //============================Verify Email Page=======================================>
+  static const String verifyEmail = 'Verify Email';
+  static const String pleaseCheckYourEmailAndEnterTheCode =
+      'Please check your email and enter the code';
+  static const String didNotReceiveCode = 'Didn’t receive code?';
+  static const String resendIt = 'Resend it';
+
   //============================Reset Password Page=======================================>
   static const String resetPassword = 'Reset Password';
   static const String enterANewPassword = 'Enter a new password';
 
+  //============================Toaster String=======================================>
+  static const String passwordsDoNotMatch = 'Passwords do not match !!';
+
   //============================Reset Password Modal=======================================>
   static const String passwordChanged = 'Password Changed!';
-  static const String backToSignIn  = 'Back to sign in';
+  static const String backToSignIn = 'Back to sign in';
   static const String
   returnToTheLoginPageToEnterYourAccountWithYourNewPassword =
       'Return to the login page to enter your account with your new password.';
+
+  //============================Validator  String=======================================>
+  static const String pleaseEnterYour = 'Please Enter Your';
 }

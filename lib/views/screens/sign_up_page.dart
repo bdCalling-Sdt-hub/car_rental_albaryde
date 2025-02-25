@@ -68,7 +68,7 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterUserName,
                       prefixIcon: Icon(
@@ -76,6 +76,12 @@ class _SignUPPageState extends State<SignUPPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _userNameTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} User Name !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 16.h),
@@ -84,7 +90,7 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterEmail,
                       prefixIcon: Icon(
@@ -92,6 +98,12 @@ class _SignUPPageState extends State<SignUPPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _emailTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Email !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 16.h),
@@ -100,14 +112,21 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.phoneNumberHintText,
+                      keyBoardType: TextInputType.number,
                       prefixIcon: Icon(
                         Icons.phone,
                         color: AppColors.primaryColor,
                       ),
                       controller: _phoneTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Phone Number !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 16.h),
@@ -116,7 +135,7 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       isPassword: true,
                       formHintText: AppString.enterPassword,
@@ -125,6 +144,12 @@ class _SignUPPageState extends State<SignUPPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _passwordTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Password !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   Text(
@@ -132,7 +157,7 @@ class _SignUPPageState extends State<SignUPPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       isPassword: true,
                       formHintText: AppString.confirmPassword,
@@ -141,6 +166,12 @@ class _SignUPPageState extends State<SignUPPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _confirmPasswordTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Password again !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
                   SizedBox(height: 32.h),
@@ -185,7 +216,7 @@ class _SignUPPageState extends State<SignUPPage> {
                           });
 
                           // TODO: Sign up logic
-                          // After form validation and submission, you can proceed with navigation or other actions.
+                          // if (_formKey.currentState!.validate()) {}
                         }
                       },
                       child: Text(

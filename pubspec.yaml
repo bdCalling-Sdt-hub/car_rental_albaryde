@@ -41,6 +41,8 @@ dependencies:
   flutter_svg: ^2.0.17
   #for caching image
   cached_network_image: ^3.4.1
+  #for pin code fields :
+  pin_code_fields: ^8.0.1
 
 
 

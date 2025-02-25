@@ -73,7 +73,7 @@ class _SignInPageState extends State<SignInPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterEmail,
                       prefixIcon: Icon(
@@ -81,6 +81,12 @@ class _SignInPageState extends State<SignInPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _emailTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Email !!';
+                        }
+                        return null;
+                      },
                       onChanged: (value) {
                         print("Email Input: $value");
                       },
@@ -93,7 +99,7 @@ class _SignInPageState extends State<SignInPage> {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       isPassword: true,
                       formHintText: AppString.enterPassword,
@@ -102,6 +108,12 @@ class _SignInPageState extends State<SignInPage> {
                         color: AppColors.primaryColor,
                       ),
                       controller: _passwordTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Password !!';
+                        }
+                        return null;
+                      },
 
                       onChanged: (value) {
                         print("Email Input: $value");

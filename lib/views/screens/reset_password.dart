@@ -11,17 +11,21 @@ import '../base/components/custom_text_field.dart';
 import '../base/widgets/app_custom_modal.dart';
 import '../base/widgets/app_custom_textfield.dart';
 
-class ResetPasswordPage extends StatelessWidget {
+class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final TextEditingController _resetPassTEController =
-        TextEditingController();
-    final TextEditingController _confirmPassTeController =
-        TextEditingController();
+  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
+}
 
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+class _ResetPasswordPageState extends State<ResetPasswordPage> {
+  final TextEditingController _resetPassTEController = TextEditingController();
+  final TextEditingController _confirmPassTeController =
+      TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -60,7 +64,7 @@ class ResetPasswordPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       isPassword: true,
                       formHintText: AppString.password,
@@ -69,6 +73,12 @@ class ResetPasswordPage extends StatelessWidget {
                         color: AppColors.primaryColor,
                       ),
                       controller: _resetPassTEController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Password !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
 
@@ -78,7 +88,7 @@ class ResetPasswordPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   SizedBox(height: 14.h),
-                  AppCustomTextField(
+                  AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       isPassword: true,
                       formHintText: AppString.confirmPassword,
@@ -87,6 +97,12 @@ class ResetPasswordPage extends StatelessWidget {
                         color: AppColors.primaryColor,
                       ),
                       controller: _confirmPassTeController,
+                      validator: (String? value) {
+                        if (value?.isEmpty ?? true) {
+                          return '${AppString.pleaseEnterYour} Password again !!';
+                        }
+                        return null;
+                      },
                     ),
                   ),
 
@@ -96,19 +112,18 @@ class ResetPasswordPage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         FocusScope.of(context).unfocus();
-                        // TODO: Reset pass logic
-                        if (_resetPassTEController.text.trim() ==
+                        clearingTextField();
+                        if (_resetPassTEController.text.trim() !=
                             _confirmPassTeController.text.trim()) {
                           CustomToast().showToast(
                             context: context,
-                            message: 'Pasasdfsdfsdwords do not match !!',
+                            message: AppString.passwordsDoNotMatch,
                             isError: true,
                           );
                           return;
                         }
-
-
-
+                        // TODO: password Reset logic
+                        // if (_formKey.currentState!.validate()) {}
                         showModalBottomSheet(
                           context: context,
                           shape: RoundedRectangleBorder(
@@ -119,7 +134,11 @@ class ResetPasswordPage extends StatelessWidget {
                           builder: (BuildContext context) {
                             return AppCustomModal();
                           },
-                        );
+                        ).whenComplete(() {
+                          // This callback is called when the modal is dismissed
+                          FocusScope.of(context).unfocus();
+                        });
+                        ;
                       },
                       child: Text(
                         AppString.resetPassword,
@@ -134,5 +153,17 @@ class ResetPasswordPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void clearingTextField() {
+    _resetPassTEController.clear();
+    _confirmPassTeController.clear();
+  }
+
+  @override
+  void dispose() {
+    _confirmPassTeController.dispose();
+    _resetPassTEController.dispose();
+    super.dispose();
   }
 }

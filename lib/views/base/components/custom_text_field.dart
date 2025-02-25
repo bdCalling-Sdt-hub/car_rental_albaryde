@@ -10,6 +10,7 @@ class MyTextFormFieldWithIcon extends StatefulWidget {
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
   final FormFieldValidator<String>? validator;
+  final TextInputType? keyBoardType;
 
   const MyTextFormFieldWithIcon({
     super.key,
@@ -20,6 +21,7 @@ class MyTextFormFieldWithIcon extends StatefulWidget {
     this.controller,
     this.onChanged,
     this.validator,
+    this.keyBoardType,
   });
 
   @override
@@ -41,6 +43,7 @@ class _MyTextFormFieldWithIconState extends State<MyTextFormFieldWithIcon> {
       ),
       child: TextFormField(
         controller: widget.controller,
+        keyboardType: widget.keyBoardType,
         obscureText: widget.isPassword ? _obscureText : false,
         onChanged: widget.onChanged,
         decoration: InputDecoration(
