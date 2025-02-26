@@ -10,7 +10,9 @@ import 'package:untitled/views/screens/user_role/authentication/forgot_password_
 import 'package:untitled/views/screens/user_role/authentication/sign_up_page.dart';
 
 import '../../../../utilities/app_colors.dart';
+import '../../../../utilities/app_icons.dart';
 import '../../../base/components/custom_text_field.dart';
+import '../../../base/components/network_svg_image .dart';
 import '../../../base/widgets/app_custom_textfield.dart';
 
 class SignInPage extends StatefulWidget {
@@ -76,10 +78,7 @@ class _SignInPageState extends State<SignInPage> {
                   AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterEmail,
-                      prefixIcon: Icon(
-                        Icons.mail,
-                        color: AppColors.primaryColor,
-                      ),
+                      prefixIcon: Icon(Icons.mail,color: AppColors.primaryColor),
                       controller: _emailTEController,
                       validator: (String? value) {
                         if (value?.isEmpty ?? true) {

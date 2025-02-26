@@ -17,15 +17,15 @@ class AppTheme {
         fontWeight: FontWeight.w500,
       ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.0).r,
+        borderRadius: BorderRadius.circular(10.0.r),
         borderSide: BorderSide.none, // Invisible border
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.0).r,
+        borderRadius: BorderRadius.circular(10.0.r),
         borderSide: BorderSide.none, // Invisible border
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10.0).r,
+        borderRadius: BorderRadius.circular(10.0.r),
         borderSide: BorderSide.none, // Invisible border
       ),
       hintStyle: TextStyle(

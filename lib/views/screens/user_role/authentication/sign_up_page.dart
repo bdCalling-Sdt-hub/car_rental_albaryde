@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import 'package:untitled/utilities/app_colors.dart';
 import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/screens/user_role/authentication/sign_in_page.dart';
+import '../../../../utilities/app_icons.dart';
 import '../../../base/components/custom_text_field.dart';
+import '../../../base/components/network_svg_image .dart';
 import '../../../base/widgets/app_custom_textfield.dart';
 import '../../../base/widgets/textUnderlne.dart';
 

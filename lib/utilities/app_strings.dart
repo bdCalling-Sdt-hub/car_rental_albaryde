@@ -66,7 +66,35 @@ class AppString {
   static const String termsAndConditions = 'Terms & Conditions';
   static const String aboutUs = 'About Us';
   static const String support = 'Support';
+
   //============================Settings Landing Page=======================================>
   static const String newPassword = 'New Password';
   static const String oldPassword = 'Old Password';
+
+  //============================Settings Privacy Policy Page=======================================>
+  static const String privacyPolicyTitle = 'Privacy Policy';
+  static const String privacyPolicyLastUpdate = 'last Update Feb 2025';
+  static const String privacyPolicyContent = '''
+Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant mattis viverra elementum purus volutpat. Lacus eu molestie pulvinar rhoncus integer proin elementum. Pretium sit fringilla massa tristique aenean commodo leo. Aliquet viverra amet sit porta elementum et pellentesque posuere. Ullamcorper viverra tortor lobortis viverra auctor egestas. Nulla condimentum ac metus quam turpis gravida ut velit. Porta justo lacus consequat sed platea. Ut dui massa quam elit faucibus consectetur sapien aenean auctor. Felis ipsum amet justo in. Netus amet in egestas sed auctor lorem. Justo ullamcorper velit habitasse lorem eu arcu. Non enim a elit urna eget nibh quisque donec condimentum. Elit ut pellentesque neque in quis at viverra. Nisl etiam tristique odio eget convallis.
+''';
+
+  //============================Settings Privacy Policy Page=======================================>
+  static const String termsConditions = 'Terms & conditions';
+  static const String termsConditionsLastUpdate1 = 'last Update Feb 2025';
+  static const String termsConditionsLastUpdate2 = 'last Update Mar 2025';
+  static const String termsConditionsContent1 = '''
+Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant mattis viverra elementum purus volutpat. Lacus eu molestie pulvinar rhoncus integer proin elementum. Pretium sit fringilla massa tristique aenean commodo leo. Aliquet viverra amet sit porta elementum et pellentesque posuere. Ullamcorper viverra tortor lobortis viverra auctor egestas. Nulla condimentum ac metus quam turpis gravida ut velit. Porta justo lacus consequat sed platea. Ut dui massa quam elit faucibus consectetur sapien aenean auctor. Felis ipsum amet justo in. Netus amet in egestas sed auctor lorem. Justo ullamcorper velit habitasse lorem eu arcu. Non enim a elit urna eget nibh quisque donec condimentum. Elit ut pellentesque neque in quis at viverra. Nisl etiam tristique odio eget convallis.
+''';
+
+  static const String termsConditionsContent2 = '''
+Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant mattis viverra elementum purus volutpat. Lacus eu molestie pulvinar rhoncus integer proin elementum. Pretium sit fringilla massa tristique aenean commodo leo.
+''';
+
+  //============================Settings AboutUs Page=======================================>
+  static const String aboutUsContent = '''
+Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant mattis viverra elementum purus volutpat. Lacus eu molestie pulvinar rhoncus integer proin elementum. Pretium sit fringilla massa tristique aenean commodo leo.
+''';
+
+  //============================Settings Support Page=======================================>
+  static const String supportMail = 'Support@info.com';
 }

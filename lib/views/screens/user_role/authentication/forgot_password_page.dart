@@ -9,7 +9,9 @@ import 'package:untitled/views/base/widgets/textUnderlne.dart';
 import 'package:untitled/views/screens/user_role/authentication/sign_up_page.dart';
 import 'package:untitled/views/screens/user_role/authentication/verify_mail.dart';
 
+import '../../../../utilities/app_icons.dart';
 import '../../../base/components/custom_text_field.dart';
+import '../../../base/components/network_svg_image .dart';
 import '../../../base/widgets/app_custom_textfield.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -70,10 +72,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         return isEmailValid(value);
                       },
                       formHintText: AppString.enterEmail,
-                      prefixIcon: Icon(
-                        Icons.mail,
-                        color: AppColors.primaryColor,
-                      ),
+                      prefixIcon: Icon(Icons.mail,color: AppColors.primaryColor),
                     ),
                   ),
 

@@ -137,7 +137,7 @@ class _SettingsPasswordChangePageState
                               context: context,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(24).r,
+                                  top: Radius.circular(24.r),
                                 ), // Curved top border
                               ),
                               builder: (BuildContext context) {

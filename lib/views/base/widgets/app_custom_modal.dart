@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled/utilities/app_colors.dart';
 
 import '../../../utilities/app_strings.dart';
 import '../../screens/user_role/authentication/sign_in_page.dart';
 
 class AppCustomModal extends StatelessWidget {
-  const AppCustomModal({
-    super.key,
-  });
+  const AppCustomModal({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +16,7 @@ class AppCustomModal extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.white,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(24).r,
-        ),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         border: Border(
           top: BorderSide(
             color: AppColors.primaryColor.withValues(
@@ -49,9 +44,7 @@ class AppCustomModal extends StatelessWidget {
 
             CircleAvatar(
               radius: 54.r,
-              backgroundColor: AppColors.grey.withValues(
-                alpha: .05,
-              ),
+              backgroundColor: AppColors.grey.withValues(alpha: .05),
               child: CircleAvatar(
                 radius: 48.r,
                 backgroundColor: AppColors.primaryColor,
@@ -69,19 +62,13 @@ class AppCustomModal extends StatelessWidget {
             SizedBox(height: 32.h),
             Text(
               AppString.passwordChanged,
-              style:
-              Theme.of(
-                context,
-              ).textTheme.displayLarge,
+              style: Theme.of(context).textTheme.displayLarge,
             ),
             SizedBox(height: 10.h),
             Text(
               AppString
                   .returnToTheLoginPageToEnterYourAccountWithYourNewPassword,
-              style:
-              Theme.of(
-                context,
-              ).textTheme.displayMedium,
+              style: Theme.of(context).textTheme.displayMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 32.h),
@@ -91,10 +78,7 @@ class AppCustomModal extends StatelessWidget {
               },
               child: Text(
                 AppString.backToSignIn,
-                style:
-                Theme.of(
-                  context,
-                ).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
           ],
