@@ -54,6 +54,12 @@ class AppTheme {
         fontSize: 12.sp,
         fontWeight: FontWeight.w500,
       ),
+      labelSmall: TextStyle(
+        fontFamily: 'quicksand',
+        color: AppColors.black,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+      ),
       headlineMedium: TextStyle(
         fontFamily: 'quicksand',
         color: AppColors.black,

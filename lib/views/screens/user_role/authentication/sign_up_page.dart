@@ -74,7 +74,7 @@ class _SignUPPageState extends State<SignUPPage> {
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterUserName,
                       prefixIcon: Icon(
-                        Icons.person,
+                        Icons.account_circle,
                         color: AppColors.primaryColor,
                       ),
                       controller: _userNameTEController,
@@ -191,10 +191,18 @@ class _SignUPPageState extends State<SignUPPage> {
                         activeColor: AppColors.primaryColor,
                       ),
                       Expanded(
-                        child: Text(
-                          AppString
-                              .byCreatingAnAccountIAcceptTheTermsConditions,
-                          style: Theme.of(context).textTheme.displayMedium,
+                        child: InkWell(
+                          enableFeedback: false,
+                          onTap: () {
+                            setState(() {
+                              _isChecked = !_isChecked;
+                            });
+                          },
+                          child: Text(
+                            AppString
+                                .byCreatingAnAccountIAcceptTheTermsConditions,
+                            style: Theme.of(context).textTheme.displayMedium,
+                          ),
                         ),
                       ),
                     ],

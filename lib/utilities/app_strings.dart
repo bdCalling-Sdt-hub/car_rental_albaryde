@@ -1,8 +1,8 @@
 //============================LoginPage=======================================>
 class AppString {
   static String signInToYourAccount = 'Sign in To your Account';
-  static const String welcomeBackSignInUsingYourSocialAccountOr =
-      'Welcome back! Sign In Using Your Social Account Or';
+  static const String signInToYourAccountToContinue =
+      'Welcome! Sign in to your account to continue.';
   static const String emailToContinueUs = 'Email To Continue Us';
   static const String yourEmail = 'Your Email';
   static const String enterEmail = 'Enter Email';
@@ -97,4 +97,17 @@ Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant m
 
   //============================Settings Support Page=======================================>
   static const String supportMail = 'Support@info.com';
+
+  //============================ Profile Page=======================================>
+  static const String oops = 'Oops!';
+  static const String pageNotFound =
+      'The page you were looking for can’t be found.';
+  static const String backToHomePage = 'Back to home page';
+
+  //============================Profile Page=======================================>
+  static const String personalInformation = 'Personal information';
+  static const String referralCode = 'Referral code';
+  static const String myWallet = 'my wallet';
+  static const String logout = 'Logout';
+  static const String profile = 'Profile';
 }

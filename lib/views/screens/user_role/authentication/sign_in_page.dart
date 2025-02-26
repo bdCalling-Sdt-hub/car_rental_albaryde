@@ -57,7 +57,7 @@ class _SignInPageState extends State<SignInPage> {
                   SizedBox(height: 14.h),
                   Center(
                     child: Text(
-                      AppString.welcomeBackSignInUsingYourSocialAccountOr,
+                      AppString.signInToYourAccount,
                       style: Theme.of(context).textTheme.displayMedium,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -78,7 +78,10 @@ class _SignInPageState extends State<SignInPage> {
                   AppCustomContainerField(
                     containerChild: MyTextFormFieldWithIcon(
                       formHintText: AppString.enterEmail,
-                      prefixIcon: Icon(Icons.mail,color: AppColors.primaryColor),
+                      prefixIcon: Icon(
+                        Icons.mail,
+                        color: AppColors.primaryColor,
+                      ),
                       controller: _emailTEController,
                       validator: (String? value) {
                         if (value?.isEmpty ?? true) {

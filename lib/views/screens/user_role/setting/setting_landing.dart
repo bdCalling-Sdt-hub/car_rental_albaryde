@@ -134,7 +134,9 @@ class SettingComponents extends StatelessWidget {
         style:
             supportPage
                 ? Theme.of(context).textTheme.displayMedium
-                : Theme.of(context).textTheme.headlineMedium,
+                : Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
       ),
       trailing: endIcon,
       onTap: onTap,

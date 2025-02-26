@@ -48,7 +48,7 @@ class SettingTemplatePage extends StatelessWidget {
                         supportPage: true,
                         leading: NetworkSvgImage(
                           assetName: AppIcons.gmailIcon,
-                          height: 24,
+                          height: 24.h,
                         ),
                         bodyText: AppString.supportMail,
                         endIcon: null,
