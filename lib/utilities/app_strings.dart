@@ -1,5 +1,6 @@
 //============================LoginPage=======================================>
 class AppString {
+  AppString._();
   static String signInToYourAccount = 'Sign in To your Account';
   static const String signInToYourAccountToContinue =
       'Welcome! Sign in to your account to continue.';
@@ -107,7 +108,49 @@ Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant m
   //============================Profile Page=======================================>
   static const String personalInformation = 'Personal information';
   static const String referralCode = 'Referral code';
-  static const String myWallet = 'my wallet';
+  static const String myWallet = 'My Wallet';
   static const String logout = 'Logout';
   static const String profile = 'Profile';
+
+  //============================Personal Information Page=======================================>
+  static const String name = 'Name';
+  static const String email = 'Email';
+  static const String address = 'Address';
+  static const String editProfile = 'Edit Profile';
+
+  //============================ Edit Personal Information Page=======================================>
+  static const String enterName = 'Enter Name';
+  static const String typeLocation = 'Type Location';
+  static const String updateProfile = 'Update Profile';
+
+  //============================ upload Dialog Page=======================================>
+  static const String uploadYourPhoto = "Upload Your Photo";
+  static const String dropFileOrBrowse = "Drop File Or Browse";
+  static const String photoFormatText =
+      "Format: Jpeg, Png & Max File Size: 25 MB";
+  static const String browseFiles = "Browse Files";
+  static const String cancel = "Cancel";
+  static const String done = "Done";
+
+  //============================ Logout Alert Dialog Page=======================================>
+  static const String logOut = "Log Out";
+  static const String yes = "Yes";
+  static const String no = "No";
+  static const String areYouSureYouWantToLogOut =
+      "Are You Sure You Want To Log Out ?";
+
+  //============================ Trip Status Button Text =======================================>
+  static const String pending = 'Pending';
+  static const String inProgress = 'In Progress';
+  static const String currentTrips = 'Current Trips';
+  static const String canceled = 'Canceled';
+  static const String completed = 'Completed';
+
+  //============================ Trip Status Button Text =======================================>
+  //============================ 'My Trip Page' =======================================>
+  static const String myTrip = 'My Trip';
+  //============================ 'Profile card String' =======================================>
+  static const String riderName = 'Rider Name : ';
+  static const String destination = 'Destination :';
+  static const String bookingDate = 'Booking Date :';
 }

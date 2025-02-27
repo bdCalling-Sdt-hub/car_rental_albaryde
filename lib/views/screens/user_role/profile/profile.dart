@@ -8,6 +8,9 @@ import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/components/custom_appbar.dart';
 import 'package:untitled/views/screens/user_role/profile/personal_information.dart';
 
+import '../../../../utilities/app_constant.dart';
+import '../../../base/components/settings_components.dart';
+import '../../../base/widgets/app_alert_dialog.dart';
 import '../setting/setting_landing.dart';
 
 class ProfileLandingScreen extends StatelessWidget {
@@ -30,22 +33,20 @@ class ProfileLandingScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Image with proper clipping, full display, and border
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(24.r),
-                      // Rounded corners
-                      child: Container(
-                        width: 120.w,
-                        // changhed over figma design 135 both given
-                        height: 150.h,
-                        // Adjust size as needed
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: AppColors.primaryColor, // Border color
-                            width: 2.w, // Border width
-                          ),
+                    Container(
+                      width: 120.w,
+                      height: 150.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24.r),
+                        border: Border.all(
+                          color: AppColors.primaryColor, // Border color
+                          width: 2.w, // Border width
                         ),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(22.r),
                         child: Image.network(
-                          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                          AppConstant.placeHolderImageUrl,
                           fit:
                               BoxFit
                                   .fill, // Ensure the image fills the container
@@ -105,7 +106,7 @@ class ProfileLandingScreen extends StatelessWidget {
                         Icons.account_balance_wallet,
                         color: AppColors.grey.withValues(alpha: 0.6),
                       ),
-                      bodyText: AppString.personalInformation,
+                      bodyText: AppString.myWallet,
                       onTap: () {
                         // Get.to();
                       },
@@ -129,6 +130,16 @@ class ProfileLandingScreen extends StatelessWidget {
                       ),
                       bodyText: AppString.logout,
                       onTap: () {
+                        showDialog(
+                          context: context,
+                          builder:
+                              (context) => AppAlertDialog(
+                                title: AppString.logOut,
+                                content:
+                                    AppString
+                                        .areYouSureYouWantToLogOut, // You can change this color if needed
+                              ),
+                        );
                         // Get.to();
                       },
                     ),

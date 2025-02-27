@@ -1,13 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import 'package:untitled/utilities/app_colors.dart';
+import 'package:untitled/utilities/app_constant.dart';
 import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/components/custom_appbar.dart';
+import 'package:untitled/views/screens/user_role/profile/edit_profile.dart';
 
 import '../../../../utilities/app_icons.dart';
 import '../../../base/components/network_svg_image .dart';
+import '../../../base/components/upload_photo_dialog.dart';
 
 class PersonalInformationPage extends StatelessWidget {
   const PersonalInformationPage({super.key});
@@ -19,7 +26,7 @@ class PersonalInformationPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomAppbar(appBarHeadingText: AppString.profile),
+              CustomAppbar(appBarHeadingText: AppString.personalInformation),
               SizedBox(height: 16.h),
               // Profile card section
               Container(
@@ -31,23 +38,23 @@ class PersonalInformationPage extends StatelessWidget {
                     Stack(
                       alignment: Alignment.topRight,
                       children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(24.r),
-                          // Rounded corners
-                          child: Container(
-                            width: 120.w,
-                            height: 150.h,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.primaryColor, // Border color
-                                width: 2.w, // Border width
-                              ),
+                        Container(
+                          width: 120.w,
+                          height: 150.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24.r),
+                            border: Border.all(
+                              color: AppColors.primaryColor, // Border color
+                              width: 2.w, // Border width
                             ),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(22.r),
                             child: Image.network(
-                              'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                              AppConstant.placeHolderImageUrl,
                               fit:
                                   BoxFit
-                                      .cover, // Ensure the image fills the container
+                                      .fill, // Ensure the image fills the container
                             ),
                           ),
                         ),
@@ -55,9 +62,14 @@ class PersonalInformationPage extends StatelessWidget {
                         Positioned(
                           bottom: 0,
                           right: 0,
-                          child: NetworkSvgImage(
-                            assetName: AppIcons.editIcon,
-                            height: 32.h, // Set the icon size
+                          child: InkWell(
+                            onTap: () {
+                              showUploadPhotoDialog(context);
+                            },
+                            child: NetworkSvgImage(
+                              assetName: AppIcons.editIcon,
+                              height: 32.h, // Set the icon size
+                            ),
                           ),
                         ),
                       ],
@@ -70,9 +82,12 @@ class PersonalInformationPage extends StatelessWidget {
                         color: AppColors.textFieldShade,
                         // Background color of the card
                         borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: AppColors.black.withValues(alpha: 0.3),
+                        ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
+                            color: AppColors.grey.withValues(alpha: 0.2),
                             spreadRadius: 2,
                             blurRadius: 5,
                           ),
@@ -81,16 +96,15 @@ class PersonalInformationPage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // "Edit Profile" Button on the right and underlined
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.end, 
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  // Add functionality to edit profile here
+                                  Get.to(EditProfilePage());
                                 },
                                 child: Text(
-                                  "Edit Profile",
+                                  AppString.editProfile,
                                   style: Theme.of(
                                     context,
                                   ).textTheme.headlineMedium!.copyWith(
@@ -101,63 +115,145 @@ class PersonalInformationPage extends StatelessWidget {
                             ],
                           ),
                           Text(
-                            'Personal Information',
-                            style: Theme.of(context).textTheme.displayLarge,
+                            AppString.personalInformation,
+                            style: Theme.of(context).textTheme.displayLarge!
+                                .copyWith(fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(height: 16.h),
+                          SizedBox(height: 24.h),
                           // Name Section
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
                                 Icons.account_circle,
                                 color: AppColors.primaryColor,
                               ),
                               SizedBox(width: 8.w),
-                              Text(
-                                'Bashar Isalm',
-                                style: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Name',
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.displaySmall!.copyWith(
+                                      fontSize: 12,
+                                      color: AppColors.grey.withValues(
+                                        alpha: 0.7,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Bashar Isalm',
+                                    style:
+                                        Theme.of(
+                                          context,
+                                        ).textTheme.headlineMedium,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                          SizedBox(height: 12.h),
-                          // Email Section
+                          SizedBox(height: 24.h),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Icon(Icons.email, color: AppColors.primaryColor),
+                              NetworkSvgImage(
+                                assetName: AppIcons.gmailIcon,
+                                height: 24.h,
+                              ),
                               SizedBox(width: 8.w),
-                              Text(
-                                'Support.Info@Gmail.Com',
-                                style: TextStyle(fontSize: 16.sp),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    AppString.email,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.displaySmall!.copyWith(
+                                      fontSize: 12,
+                                      color: AppColors.grey.withValues(
+                                        alpha: 0.7,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    AppString.supportMail,
+                                    style:
+                                        Theme.of(
+                                          context,
+                                        ).textTheme.headlineMedium,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                          SizedBox(height: 12.h),
-                          // Phone Number Section
+                          SizedBox(height: 24.h),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(Icons.phone, color: AppColors.primaryColor),
                               SizedBox(width: 8.w),
-                              Text('01780', style: TextStyle(fontSize: 16.sp)),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    AppString.phoneNumber,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.displaySmall!.copyWith(
+                                      fontSize: 12,
+                                      color: AppColors.grey.withValues(
+                                        alpha: 0.7,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    AppString.phoneNumberHintText,
+                                    style:
+                                        Theme.of(
+                                          context,
+                                        ).textTheme.headlineMedium,
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
-                          SizedBox(height: 12.h),
-                          // Address Section
+                          SizedBox(height: 24.h),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.location_on,
+                                Icons.location_on_rounded,
                                 color: AppColors.primaryColor,
                               ),
                               SizedBox(width: 8.w),
-                              Text(
-                                'Rangpur Bangladesh',
-                                style: TextStyle(fontSize: 16.sp),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    AppString.address,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.displaySmall!.copyWith(
+                                      fontSize: 12,
+                                      color: AppColors.grey.withValues(
+                                        alpha: 0.7,
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    'Rangpur bangladesh',
+                                    style:
+                                        Theme.of(
+                                          context,
+                                        ).textTheme.headlineMedium,
+                                  ),
+                                ],
                               ),
                             ],
                           ),
+                          SizedBox(height: 24.h),
                         ],
                       ),
                     ),

@@ -9,6 +9,7 @@ import 'package:untitled/views/screens/user_role/setting/setting_landing.dart';
 
 import '../../../../utilities/app_icons.dart';
 import '../../../base/components/network_svg_image .dart';
+import '../../../base/components/settings_components.dart';
 
 class SettingTemplatePage extends StatelessWidget {
   const SettingTemplatePage({
