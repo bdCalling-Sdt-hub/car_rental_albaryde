@@ -27,7 +27,7 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r),
         side: BorderSide(color: AppColors.black),
       ),
 
@@ -85,9 +85,9 @@ class ProfileCard extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: "2.0",
+                              text: rating,
                               style: Theme.of(context).textTheme.headlineMedium!
-                                  .copyWith(fontSize: 14),
+                                  .copyWith(fontSize: 14.sp),
                             ),
 
                             WidgetSpan(

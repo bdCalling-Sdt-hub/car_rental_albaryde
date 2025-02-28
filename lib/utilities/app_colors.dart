@@ -14,5 +14,4 @@ class AppColors {
   static const Color textFieldBorderColor = Color(0xFFFFC5A1);
   static const Color textFieldShade = Color(0xFFFFF2EB);
   static const Color modalHandleColor = Color(0xFFFFD8C0);
-  static const Color a = Color(0xFFF2EB80);
 }

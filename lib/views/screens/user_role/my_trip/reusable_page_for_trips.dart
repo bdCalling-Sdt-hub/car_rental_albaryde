@@ -10,6 +10,7 @@ import 'package:get/get.dart';
 import '../../../../controller/trip_button_controller.dart';
 import '../../../../utilities/app_colors.dart';
 import '../../../base/components/profile_card.dart';
+import '../../../base/components/profile_details_card.dart';
 
 class MyTripReusableScreen extends StatelessWidget {
   const MyTripReusableScreen({super.key});
@@ -18,19 +19,37 @@ class MyTripReusableScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            CustomAppbar(appBarHeadingText: AppString.myTrip),
-            ScrollableButtonRow(),
-            ProfileCard(
-              riderName: 'sdsdsd',
-              destination: 'sdds',
-              bookingDate: 'sdsd',
-              rating: '2.0',
-              status: 'sdsdds',
-              imageUrl: AppConstant.placeHolderImageUrl,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomAppbar(appBarHeadingText: AppString.myTrip),
+              ScrollableButtonRow(),
+              ProfileCard(
+                riderName: 'sdsdsd',
+                destination: 'sdds',
+                bookingDate: 'sdsd',
+                rating: '2.0',
+                status: 'sdsdds',
+                imageUrl: AppConstant.placeHolderImageUrl,
+              ),
+              ProfileDetailsCard(
+                riderName: "Bashar Islam",
+                tripLocation: "Dhaka City",
+                dropOffLocation: "Rampura",
+                vehicleType: "Bike",
+                personCount: 1,
+                email: "info@gamil.com",
+                phoneNumber: "55599922",
+                bookingDate: "12 Jan 2025",
+                bookingTime: "08:00 AM",
+                tripAmount: 20.0,
+                rating: 4.9,
+                status: "Pending",
+                imageUrl: "https://via.placeholder.com/150",
+                languages: ["Italian", "French"],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -84,8 +103,12 @@ class ScrollableButtonRow extends StatelessWidget {
                       },
                       child: Text(
                         buttonText,
-                        style: Theme.of(context).textTheme.displayMedium!
-                            .copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.headlineMedium!.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.sp,
+                        ),
                       ),
                     ),
                   );
