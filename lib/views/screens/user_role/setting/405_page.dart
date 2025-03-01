@@ -23,7 +23,7 @@ class Error405Page extends StatelessWidget {
           children: [
             Center(
               child: NetworkSvgImage(
-                assetName: AppAssetPath.errorImagePath404,
+                assetName: AppAssetPath. errorImagePath404,
                 height: 250.h,
                 width: 250.w,
               ),

@@ -1,6 +1,7 @@
 //============================LoginPage=======================================>
 class AppString {
   AppString._();
+
   static String signInToYourAccount = 'Sign in To your Account';
   static const String signInToYourAccountToContinue =
       'Welcome! Sign in to your account to continue.';
@@ -149,8 +150,17 @@ Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant m
   //============================ Trip Status Button Text =======================================>
   //============================ 'My Trip Page' =======================================>
   static const String myTrip = 'My Trip';
+
   //============================ 'Profile card String' =======================================>
   static const String riderName = 'Rider Name : ';
   static const String destination = 'Destination :';
   static const String bookingDate = 'Booking Date :';
+
+  //============================ 'Button Text String' =======================================>
+  static const String notNow = 'Not Now';
+  static const String submit = 'Submit';
+  static const String giveReview = 'Give Review';
+  static const String makeAPayment = 'Make a Payment';
+  static const String startTrip = 'Start Trip';
+  static const String giveADriverRating = 'Give a Driver Rating...';
 }

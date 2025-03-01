@@ -18,7 +18,12 @@ class ProfileDetailsCard extends StatelessWidget {
   final double rating;
   final String status;
   final String imageUrl;
+  final bool showButton;
+
   final List<String> languages;
+  final VoidCallback? onPressed;
+
+  final String? buttonText;
 
   const ProfileDetailsCard({
     super.key,
@@ -36,6 +41,9 @@ class ProfileDetailsCard extends StatelessWidget {
     required this.status,
     required this.imageUrl,
     required this.languages,
+    this.onPressed,
+    this.buttonText,
+    this.showButton = true,
   });
 
   @override
@@ -176,7 +184,29 @@ class ProfileDetailsCard extends StatelessWidget {
             _buildDetailRow('Trip Amount', '\$$tripAmount'),
 
             // Languages
-            SizedBox(height: 8.h),
+            SizedBox(height: 16.h),
+            showButton && onPressed != null && buttonText != null
+                ? Center(
+                  child: ElevatedButton(
+                    onPressed: onPressed,
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 4.h,
+                        horizontal: 40.w,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24.r),
+                      ),
+                    ),
+                    child: Text(
+                      buttonText!,
+                      style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                )
+                : SizedBox.shrink(),
           ],
         ),
       ),
@@ -185,7 +215,7 @@ class ProfileDetailsCard extends StatelessWidget {
 
   Widget _buildDetailRow(String label, String value) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8 .h),
+      padding: EdgeInsets.symmetric(vertical: 8.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

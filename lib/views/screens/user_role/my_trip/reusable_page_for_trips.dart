@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:untitled/utilities/app_asset_path.dart';
 import 'package:untitled/utilities/app_constant.dart';
+import 'package:untitled/utilities/app_icons.dart';
 import 'package:untitled/utilities/app_strings.dart';
-import 'package:untitled/views/base/components/custom_appbar.dart'; // Assuming this is your custom appbar widget
-import 'dart:convert'; // For JSON decoding
-import 'package:get/get.dart';
+import 'package:untitled/views/base/components/custom_appbar.dart';
+
 
 import '../../../../controller/trip_button_controller.dart';
 import '../../../../utilities/app_colors.dart';
 import '../../../base/components/profile_card.dart';
 import '../../../base/components/profile_details_card.dart';
+import '../../../base/widgets/app_alert_dialog.dart';
+
+
+import '../../../base/widgets/rating_dialog.dart';
+//My Trip Empty file , My Trip Page (1, 2 ,3 ,4 )  ,
 
 class MyTripReusableScreen extends StatelessWidget {
   const MyTripReusableScreen({super.key});
@@ -47,6 +53,23 @@ class MyTripReusableScreen extends StatelessWidget {
                 status: "Pending",
                 imageUrl: "https://via.placeholder.com/150",
                 languages: ["Italian", "French"],
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  showRatingDialog(
+                    context,
+                    AppString.giveADriverRating, // Rating message
+                    (rating) {
+                      print(
+                        "User rated: $rating",
+                      ); // Handle the rating here (e.g., save it or send to API)
+                    },
+                  );
+                },
+                child: Text(
+                  "click",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
               ),
             ],
           ),
@@ -132,3 +155,4 @@ class ScrollableButtonRow extends StatelessWidget {
     );
   }
 }
+

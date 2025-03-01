@@ -1,4 +1,6 @@
 class AppIcons {
+  AppIcons._();
+
   static String baseUrl = "assets/icons";
   static String homeIcon = "$baseUrl/home_icon.svg";
   static String walletIcon = "$baseUrl/wallet_icon.svg";
@@ -79,4 +81,5 @@ class AppIcons {
   static String gmailIcon = "$baseUrl/gmail_icon.svg";
   static String editIcon = "$baseUrl/edit_icon.svg";
   static String emptyTrip = "$baseUrl/empty_trip_icon.svg";
+  static String checkMark = "$baseUrl/check_mark_icon.svg";
 }
