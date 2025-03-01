@@ -163,4 +163,9 @@ Lorem ipsum dolor sit amet consectetur. Ultrices id feugiat venenatis habitant m
   static const String makeAPayment = 'Make a Payment';
   static const String startTrip = 'Start Trip';
   static const String giveADriverRating = 'Give a Driver Rating...';
+
+  //============================ 'Booking Search String' =======================================>
+  static const String planYourRide = 'Plan Your ride';
+  static const String pickUP = 'PICKUP';
+  static const String dropOff = 'DROP-OFF';
 }

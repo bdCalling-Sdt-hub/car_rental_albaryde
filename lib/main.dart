@@ -5,6 +5,7 @@ import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/utilities/app_theme.dart';
 import 'package:untitled/views/base/components/profile_details_card.dart';
 import 'package:untitled/views/screens/user_role/authentication/sign_in_page.dart';
+import 'package:untitled/views/screens/user_role/booking_system/search.dart';
 import 'package:untitled/views/screens/user_role/my_trip/template_details_page.dart';
 import 'package:untitled/views/screens/user_role/my_trip/reusable_page_for_trips.dart';
 import 'package:untitled/views/screens/user_role/profile/profile.dart';

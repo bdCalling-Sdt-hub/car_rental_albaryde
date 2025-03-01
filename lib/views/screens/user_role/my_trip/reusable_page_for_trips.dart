@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ import 'package:untitled/utilities/app_constant.dart';
 import 'package:untitled/utilities/app_icons.dart';
 import 'package:untitled/utilities/app_strings.dart';
 import 'package:untitled/views/base/components/custom_appbar.dart';
-
+import 'package:untitled/views/base/components/network_svg_image%20.dart';
 
 import '../../../../controller/trip_button_controller.dart';
 import '../../../../utilities/app_colors.dart';
@@ -14,16 +15,31 @@ import '../../../base/components/profile_card.dart';
 import '../../../base/components/profile_details_card.dart';
 import '../../../base/widgets/app_alert_dialog.dart';
 
-
 import '../../../base/widgets/rating_dialog.dart';
 //My Trip Empty file , My Trip Page (1, 2 ,3 ,4 )  ,
 
 class MyTripReusableScreen extends StatelessWidget {
-  const MyTripReusableScreen({super.key});
+  final bool isFutureBooking;
+
+  const MyTripReusableScreen({super.key, this.isFutureBooking = false});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton:
+          isFutureBooking
+              ? Padding(
+                padding: EdgeInsets.all(8.0.r),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    //TODO : Floating Action Button Functionality ( Calender page )
+                  },
+                  backgroundColor: AppColors.primaryColor,
+                  // shape: CircleBorder(),
+                  child: Icon(Icons.calendar_month, size: 32.sp),
+                ),
+              )
+              : null,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -92,7 +108,7 @@ class ScrollableButtonRow extends StatelessWidget {
       children: [
         // Scrollable Row with buttons
         Container(
-          height: 50, // Adjust the height as needed
+          height: 50.h, // Adjust the height as needed
           padding: EdgeInsets.symmetric(horizontal: 8.0.w),
           child: GetBuilder<ButtonController>(
             builder: (controller) {
@@ -155,4 +171,3 @@ class ScrollableButtonRow extends StatelessWidget {
     );
   }
 }
-

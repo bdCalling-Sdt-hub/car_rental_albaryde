@@ -82,4 +82,8 @@ class AppIcons {
   static String editIcon = "$baseUrl/edit_icon.svg";
   static String emptyTrip = "$baseUrl/empty_trip_icon.svg";
   static String checkMark = "$baseUrl/check_mark_icon.svg";
+  static String mapSearchField = "$baseUrl/map_search_field_icon.svg";
+  static String swapIcon = "$baseUrl/swap_icon.svg";
+  static String searchNavigationIcon = "$baseUrl/search_navigation_icon";
+  static String calendarIcon1 = "$baseUrl/calender_icon";
 }
